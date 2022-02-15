@@ -11,8 +11,11 @@ import {
 
 function registerHelpers() {
 
+  // Cards
   Handlebars.registerHelper('blogCard', blogCard);
   Handlebars.registerHelper('videoCard', videoCard);
+
+  // Groups
   Handlebars.registerHelper('latestPosts', latestPosts);
   Handlebars.registerHelper('latestVideos', latestVideos);
 

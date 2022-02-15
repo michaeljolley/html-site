@@ -1,4 +1,4 @@
-import Handlebars from 'handlebars';
+import baseHelper from './baseHelper.js';
 
 const html = `
 <section>
@@ -14,10 +14,4 @@ const html = `
 </section>
 `;
 
-export function latestVideos(videos) {
-  const template = Handlebars.compile(html);
-
-  const renderedContent = template({ videos });
-
-  return new Handlebars.SafeString(renderedContent);
-}
+export default (videos) => baseHelper(html, { videos });

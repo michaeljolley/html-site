@@ -1,4 +1,4 @@
-import Handlebars from 'handlebars';
+import baseHelper from './baseHelper.js';
 
 const html = `
 <li>
@@ -22,10 +22,4 @@ const html = `
   </a>
 </li>`;
 
-export function blogCard(post) {
-  const template = Handlebars.compile(html);
-
-  const renderedContent = template(post);
-
-  return new Handlebars.SafeString(renderedContent);
-}
+export default (post) => baseHelper(html, post);

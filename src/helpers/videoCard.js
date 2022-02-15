@@ -1,4 +1,4 @@
-import Handlebars from 'handlebars';
+import baseHelper from './baseHelper.js';
 
 const html = `
 <li>
@@ -23,10 +23,4 @@ const html = `
   </a>
 </li>`;
 
-export function videoCard(video) {
-  const template = Handlebars.compile(html);
-
-  const renderedContent = template(video);
-
-  return new Handlebars.SafeString(renderedContent);
-}
+export default (video) => baseHelper(html, video);

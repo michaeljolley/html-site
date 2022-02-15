@@ -1,11 +1,11 @@
-import Handlebars from 'handlebars';
+import baseHelper from './baseHelper.js';
 
 const html = `
 <section>
   <div class="latest-posts">
     <h2>Latest <span>Posts</span></h2>
     <ul>
-      {{#each allPosts}}
+      {{#each posts}}
         {{blogCard this}}
       {{/each}}
     </ul>
@@ -14,10 +14,4 @@ const html = `
 </section>
 `;
 
-export function latestPosts(allPosts) {
-  const template = Handlebars.compile(html);
-
-  const renderedContent = template({ allPosts });
-
-  return new Handlebars.SafeString(renderedContent);
-}
+export default (posts) => baseHelper(html, { posts });
