@@ -1,0 +1,73 @@
+:root {
+  --darkPurple: rgb(20, 5, 28);
+
+
+  --gray100: rgb(243, 244, 246);
+}
+
+
+.hamburger {
+  display: block;
+  width: 2.5rem;
+  outline: 2px solid transparent;
+  outline-offset: 2px;
+  padding: 0px;
+  border-width: 0px;
+  background-color: transparent;
+  margin-right: 2rem;
+}
+
+.hamburger:before,
+.hamburger:after {
+  background-color: var(--darkPurple);
+  display: block;
+  height: 0.25rem;
+  content: '';
+  transition: all 200ms ease-in-out;
+}
+
+/********************************************************/
+/* Dark mode styles
+/********************************************************/
+@media (prefers-color-scheme: dark) {
+  
+  .hamburger:before,
+  .hamburger:after {
+    background-color: var(--gray100);
+  }
+
+
+
+
+}
+  
+
+  &:before,
+  &:after {
+    @apply bg-darkPurple dark:bg-gray-100;
+    @apply block;
+    @apply h-1;
+    content: '';
+    transition: all 200ms ease-in-out;
+  }
+  &:before {
+    @apply mb-4;
+
+    box-shadow: 0 10px 0 rgb(20, 5, 28);
+  }
+  &.open:before {
+    box-shadow: 0 0 0 rgb(20, 5, 28);
+    transform: translateY(10px) rotate(45deg);
+  }
+  &.open:after {
+    transform: translateY(-10px) rotate(-45deg);
+  }
+}
+.dark button {
+  &:before {
+    box-shadow: 0 10px 0 rgb(243, 244, 246);
+  }
+  &.open:before {
+    box-shadow: 0 0 0 rgb(243, 244, 246);
+  }
+}
