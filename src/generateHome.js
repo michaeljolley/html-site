@@ -14,7 +14,6 @@ async function generateHome() {
   const blogPosts = await getBlogPosts();
   const videos = await getVideos();
 
-
   const latestPosts = blogPosts.slice(0, 6);
   const latestVideos = videos.slice(0, 3);
 

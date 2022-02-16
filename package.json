@@ -2,11 +2,11 @@
   "name": "html-site",
   "version": "1.0.0",
   "description": "A fully static site",
-  "main": "dev.js",
   "type": "module",
   "scripts": {
     "build": "node build.js",
-    "dev": "node dev.js"
+    "dev": "node build.js && node dev.js",
+    "nodemon": "nodemon --exec \"npm run dev\" -e html,js,css,png,md -i dist/"
   },
   "repository": {
     "type": "git",
