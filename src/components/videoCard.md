@@ -1,6 +1,7 @@
-import baseHelper from './baseHelper.js';
+---
+parameters: ['video']
+---
 
-const html = `
 <li>
   <a href="{{link}}" title="{{title}}">
     <img src="{{thumbnail}}" alt="{{title}}"/>
@@ -21,6 +22,4 @@ const html = `
       </span>
     </footer>
   </a>
-</li>`;
-
-export default (video) => baseHelper(html, video);
+</li>

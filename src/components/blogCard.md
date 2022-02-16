@@ -1,6 +1,7 @@
-import baseHelper from './baseHelper.js';
+---
+parameters: ['post']
+---
 
-const html = `
 <li>
   <a href="/blog/{{slug.current}}/" title="{{title}}">
     <img src="{{coverImage.asset.url}}" alt="{{title}}"/>
@@ -20,6 +21,4 @@ const html = `
       </span>
     </footer>
   </a>
-</li>`;
-
-export default (post) => baseHelper(html, post);
+</li>

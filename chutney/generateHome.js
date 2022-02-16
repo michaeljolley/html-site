@@ -7,7 +7,7 @@ import getVideos from './youtube/index.js';
 async function generateHome() {
 
   // Get the template
-  const html = await fs.readFile('./templates/index.html', 'utf-8');
+  const html = await fs.readFile('./src/pages/index.html', 'utf-8');
   const template = Handlebars.compile(html);
 
   // Get any dynamic content
