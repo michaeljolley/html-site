@@ -1,5 +1,4 @@
 ---
-parameters: ['video']
 ---
 
 <li>

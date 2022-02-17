@@ -1,5 +1,4 @@
 ---
-parameters: ['post']
 ---
 
 <li>

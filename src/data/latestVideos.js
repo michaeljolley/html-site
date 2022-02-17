@@ -9,7 +9,7 @@ const parser = new Parser({
   },
 });
 
-async function getVideos() {
+async function latestVideos() {
   const feed = await parser.parseURL(
     `https://www.youtube.com/feeds/videos.xml?channel_id=${process.env.YOUTUBE_CHANNEL_ID}`
   )
@@ -25,7 +25,7 @@ async function getVideos() {
     }
   })
 
-  return videos;
+  return videos.slice(0, 3);
 }
 
-export default getVideos;
+export default latestVideos;

@@ -1,12 +1,11 @@
 ---
-parameters: ['videos']
 ---
 
 <section>
   <div class="latest-videos">
     <h2>Latest <span>Videos</span></h2>
     <ul>
-      {{#each param.videos}}
+      {{#each this}}
         {{videoCard this}}
       {{/each}}
     </ul>

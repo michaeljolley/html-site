@@ -38,20 +38,11 @@ async function registerHelpers() {
 
       const html = String(rawHtmlFile);
 
-      if (frontmatter && frontmatter.parameters) {
-        console.log(file)
-        Handlebars.registerHelper(file.replace(ext, ''), ({ param }) => {
-          const template = Handlebars.compile(html);
-          const renderedContent = template(param);
-          return new Handlebars.SafeString(renderedContent);
-        })
-      } else {
-        Handlebars.registerHelper(file.replace(ext, ''), () => {
-          const template = Handlebars.compile(html);
-          const renderedContent = template();
-          return new Handlebars.SafeString(renderedContent);
-        })
-      }
+      Handlebars.registerHelper(file.replace(ext, ''), (data) => {
+        const template = Handlebars.compile(html);
+        const renderedContent = template(data);
+        return new Handlebars.SafeString(renderedContent);
+      })
     }
   } catch (err) {
     console.log(err)
