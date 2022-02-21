@@ -3,6 +3,7 @@
   "version": "1.0.0",
   "description": "A fully static site",
   "type": "module",
+  "bin": "./dist",
   "scripts": {
     "build": "node build.js",
     "dev": "node build.js && node dev.js",
@@ -21,16 +22,8 @@
   "devDependencies": {
     "dotenv": "^16.0.0",
     "express": "^4.17.2",
-    "handlebars": "^4.7.7",
     "node-fetch": "^3.2.0",
-    "rehype-raw": "^6.1.1",
-    "rehype-stringify": "^9.0.3",
-    "remark-frontmatter": "^4.0.1",
-    "remark-gfm": "^3.0.1",
-    "remark-parse": "^10.0.1",
-    "remark-parse-yaml": "0.0.3",
-    "remark-rehype": "^10.1.0",
     "rss-parser": "^3.12.0",
-    "unified": "^10.1.1"
+    "chutney": "file:../../builders-club/chutney/"
   }
 }
