@@ -4,7 +4,7 @@ import fetch from 'node-fetch';
 dotenv.config();
 
 const query = `{
-  allPost(sort: [ { publishedAt: DESC } ]) {
+  allPost(limit: 6, sort: [ { publishedAt: DESC } ]) {
     slug {
       current
     }
@@ -34,8 +34,7 @@ async function latestPosts() {
       })
     })
   const data = await response.json();
-  const allPosts = data.data.allPost;
-  return allPosts.slice(0, 6);
+  return data.data.allPost;
 }
 
 export default latestPosts;
